@@ -5,7 +5,8 @@ here = pathlib.Path(__file__).parent.resolve()
 
 long_description = (here / 'README.md').read_text(encoding='utf-8')
 install_requires = list(val.strip() for val in open(here / 'requirements.txt'))
-
+packages=['multidict._multilib']
+packages.extend(find_packages(where="src"))
 setup(
     name="aioremootio",
     version="1.0.0.dev0",
@@ -23,6 +24,9 @@ setup(
         "Operating System :: OS Independent",
         "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3.9",
+        "Programming Language :: Python :: 3.10",
+        "Programming Language :: Python :: 3.11",
+        "Programming Language :: Python :: 3.12",
         "Topic :: Home Automation",
         "Topic :: Software Development :: Libraries"
     ],
